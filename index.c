@@ -59,6 +59,7 @@ void AreaCalc() {
     //Variáveis locais
     float TriBase, TriAltura;
     float QuadLado;
+    float RetBase, RetAlt;
     float ResultArea;
 
     system("clear");
@@ -156,8 +157,7 @@ void AreaCalc() {
                     printf("\nValor inválido! Tente novamente...\n");
                     sleep(2);
                     Op = 1;
-                    
-
+                
                 }
 
             }
@@ -165,7 +165,46 @@ void AreaCalc() {
             break;
 
         case 3:
-            printf("\nRetangulo iniciado...\n");
+            Op = 1;
+            while(Op == 1){ //Área do Retângulo
+                system("clear");
+                printf("================\n");
+                printf(" AREA RETANGULO\n");
+                printf("================\n");
+
+                printf("   A área de um Quadrado é calculada através\n");
+                printf("da razão entre sua base e sua altura.\n");
+                printf("   Sendo assim basta atribuir os valores:\n");
+
+                printf("\nBase(b): ");
+                scanf("%f", &RetBase);
+                printf("\nAltura(h): ");
+                scanf("%f", &RetAlt);
+
+                ResultArea = RetBase * RetAlt;
+
+                printf("\n===========================\n");
+                printf("  Área do retângulo: %.2f \n", ResultArea);
+                printf("===========================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    AreaCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                    
+                }
+            
+            }
 
             break;
 
