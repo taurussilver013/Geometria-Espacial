@@ -1,4 +1,5 @@
 #include <stdio.h>
+//Variáveis globais
 int Op;
 
 //Chamado de funções externas
@@ -6,13 +7,14 @@ void MenuPrincipal();
 void AreaCalc();
 
 int main() {
-    system("clear");
+    system("clear"); //Limpa tela
     AreaCalc();
 
     return 0;
 } //Fim da função Principal
 
 void MenuPrincipal() {
+    system("clear");
     printf("====================\n");
     printf(" GEOMETRIA ESPACIAL\n");
     printf("====================\n");
@@ -37,7 +39,8 @@ void MenuPrincipal() {
             break;
 
         case 3:
-        printf("O programa é encerrado...\n");
+        printf("\nO programa é encerrado...\n");
+        sleep(1);
 
         break;
 
@@ -53,7 +56,12 @@ void MenuPrincipal() {
 } //Fim da função Menu Principal
 
 void AreaCalc() {
-    system("clear"); //Limpa tela
+    //Variáveis locais
+    float TriBase, TriAltura;
+    float QuadLado;
+    float ResultArea;
+
+    system("clear");
     printf("======\n");
     printf(" AREA\n");
     printf("======\n");
@@ -69,12 +77,90 @@ void AreaCalc() {
 
     switch(Op) {
         case 1:
-            printf("\nTriangulo iniciado...\n");
+            while(Op == 1) { //Área do Triângulo
+                system("clear");
+                printf("================\n");
+                printf(" AREA TRIANGULO\n");
+                printf("================\n");
+
+                printf("   A área de um Triângulo é calculada através\n");
+                printf("da razão entre a sua base e sua altura e em seguida\n");
+                printf("dividida por 2. Sendo assim basta atribuir os valores:\n");
+
+                printf("\nBase(b): ");
+                scanf("%f", &TriBase);
+                printf("\nAltura(h): ");
+                scanf("%f", &TriAltura);
+
+                ResultArea = (TriBase * TriAltura)/2;
+
+                printf("\n===========================\n");
+                printf("  Área do triângulo: %.2f \n", ResultArea);
+                printf("===========================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    AreaCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                
+                    break;
+
+                }
+
+            }
 
             break;
 
         case 2:
-            printf("\nQuadrado iniciado...\n");
+            Op = 1;
+            while(Op == 1){ //Área do Quadrado
+                system("clear");
+                printf("===============\n");
+                printf(" AREA QUADRADO\n");
+                printf("===============\n");
+
+                printf("   A área de um Quadrado é calculada através\n");
+                printf("da razão entre dois lados proporcionalmente iguais.\n");
+                printf("   Sendo assim basta atribuir os valores:\n");
+
+                printf("\nLado(l): ");
+                scanf("%f", &QuadLado);
+
+                ResultArea = QuadLado * QuadLado;
+
+                printf("\n===========================\n");
+                printf("  Área do quadrado: %.2f \n", ResultArea);
+                printf("===========================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    AreaCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                    
+
+                }
+
+            }
 
             break;
 
@@ -84,7 +170,7 @@ void AreaCalc() {
             break;
 
         case 4:
-            printf("\nPrograma volta...\n");
+            MenuPrincipal();
 
             break;
 
@@ -97,5 +183,4 @@ void AreaCalc() {
 
     }
 
-    return 0;
 } //Fim da função de cálculo da área
