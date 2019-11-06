@@ -9,7 +9,7 @@ void VolumeCalc();
 
 int main() {
     system("clear"); //Limpa tela
-    VolumeCalc();
+    MenuPrincipal();
 
     return 0;
 } //Fim da função Principal
@@ -25,22 +25,22 @@ void MenuPrincipal() {
     printf("[3] - Sair\n");
 
     printf("\n==========\n");
-    printf("Escolha: ");
+    printf(" Escolha: ");
     scanf("%d", &Op);
 
     switch(Op) {
         case 1:
-            printf("\nÁrea é iniciado...\n");
+            AreaCalc();
 
             break;
 
         case 2:
-            printf("Volume é iniciado...\n");
+            VolumeCalc();
 
             break;
 
         case 3:
-        printf("\nO programa é encerrado...\n");
+        printf("\nFim da execução...\n");
         sleep(1);
 
         break;
@@ -232,14 +232,15 @@ void VolumeCalc() {
     float CiliRaio, CiliAlt;
     float ResultVolume;
 
+    system("clear");
     printf("========\n");
     printf(" VOLUME\n");
     printf("========\n");
 
     printf("[1] - Cubo\n");
-    printf("[2] - Paralelepípedo\n");
-    printf("[3] - Cilindro\n");
-    printf("[4] - Voltar\n");
+    printf("\n[2] - Paralelepípedo\n");
+    printf("\n[3] - Cilindro\n");
+    printf("\n[4] - Voltar\n");
 
     printf("\n==========\n");
     printf(" Escolha: ");
