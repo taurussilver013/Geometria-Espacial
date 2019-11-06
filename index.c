@@ -226,6 +226,12 @@ void AreaCalc() {
 } //Fim da função de cálculo da área
 
 void VolumeCalc() {
+    //Variáveis locais
+    float CuboLado;
+    float ParaBase, ParaLarg, ParaAlt;
+    float CiliRaio, CiliAlt;
+    float ResultVolume;
+
     printf("========\n");
     printf(" VOLUME\n");
     printf("========\n");
@@ -241,27 +247,145 @@ void VolumeCalc() {
 
     switch(Op) {
         case 1:
-            printf("Cubo é iniciado...\n");
+            while(Op == 1){ //Volume do Cubo
+                system("clear");
+                printf("=============\n");
+                printf(" VOLUME CUBO\n");
+                printf("=============\n");
+
+                printf("   O volume de um Cubo é calculado através\n");
+                printf("da razão entre um de seus lados proporcionalmente\n");
+                printf("iguais elevado a 3º potência. Basta atribuir os valores:\n");
+
+                printf("\nLado(l): ");
+                scanf("%f", &CuboLado);
+
+                ResultVolume = CuboLado * CuboLado * CuboLado;
+
+                printf("\n===========================\n");
+                printf("    Volume do Cubo: %.2f \n", ResultVolume);
+                printf("===========================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    VolumeCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                
+                }
+
+            }
 
             break;
 
         case 2:
-            printf("Paralelepípedo é iniciado...\n");
+            Op = 1;
+            while(Op == 1){ //Volume do Cilindro
+                system("clear");
+                printf("=======================\n");
+                printf(" VOLUME PARALELEPIPEDO\n");
+                printf("=======================\n");
+
+                printf("   O volume de um Paralelepípedo é calculado\n");
+                printf("através da razão entre sua base, altura e largura.\n");
+                printf("Sendo assim, basta atribuir os valores:\n");
+
+                printf("\nBase(a): ");
+                scanf("%f", &ParaBase);
+                printf("\nLargura(b): ");
+                scanf("%f", &ParaLarg);
+                printf("\nAltura(c): ");
+                scanf("%f", &ParaAlt);
+
+                ResultVolume = ParaBase * ParaLarg * ParaAlt;
+
+                printf("\n==================================\n");
+                printf("  Volume do Paralelepípedo: %.2f \n", ResultVolume);
+                printf("==================================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    VolumeCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                
+                }
+
+            }
 
             break;
 
         case 3:
-            printf("Cilindro é iniciado...\n");
+            Op = 1;
+            while(Op == 1){ //Volume do Cilindro
+                system("clear");
+                printf("=================\n");
+                printf(" VOLUME CILINDRO\n");
+                printf("=================\n");
+
+                printf("   O volume de um Cilindro é calculado através\n");
+                printf("da razão da área de sua base multiplicada pela altura\n");
+                printf("do cilindro. Sendo assim, basta atribuir os valores:\n");
+
+                printf("\nRaio(r): ");
+                scanf("%f", &CiliRaio);
+                printf("\nAltura(h): ");
+                scanf("%f", &CiliAlt);
+
+                ResultVolume = 3.14*(CiliRaio*CiliRaio)*CiliAlt;
+
+                printf("\n===========================\n");
+                printf("    Volume do Cilindro: %.2f \n", ResultVolume);
+                printf("===========================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    VolumeCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                
+                }
+
+            }
 
             break;
 
         case 4:
-            printf("Programa volta...\n");
+            MenuPrincipal();
 
             break;
 
         default:
             printf("Valor inválido! Tente novamente...\n");
+            sleep(2);
+            VolumeCalc();
 
             break;
 
