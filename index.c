@@ -5,10 +5,11 @@ int Op;
 //Chamado de funções externas
 void MenuPrincipal();
 void AreaCalc();
+void VolumeCalc();
 
 int main() {
     system("clear"); //Limpa tela
-    AreaCalc();
+    VolumeCalc();
 
     return 0;
 } //Fim da função Principal
@@ -223,3 +224,47 @@ void AreaCalc() {
     }
 
 } //Fim da função de cálculo da área
+
+void VolumeCalc() {
+    printf("========\n");
+    printf(" VOLUME\n");
+    printf("========\n");
+
+    printf("[1] - Cubo\n");
+    printf("[2] - Paralelepípedo\n");
+    printf("[3] - Cilindro\n");
+    printf("[4] - Voltar\n");
+
+    printf("\n==========\n");
+    printf(" Escolha: ");
+    scanf("%d", &Op);
+
+    switch(Op) {
+        case 1:
+            printf("Cubo é iniciado...\n");
+
+            break;
+
+        case 2:
+            printf("Paralelepípedo é iniciado...\n");
+
+            break;
+
+        case 3:
+            printf("Cilindro é iniciado...\n");
+
+            break;
+
+        case 4:
+            printf("Programa volta...\n");
+
+            break;
+
+        default:
+            printf("Valor inválido! Tente novamente...\n");
+
+            break;
+
+    }
+
+} //Fim da função de cálculo do volume
