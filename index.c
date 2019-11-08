@@ -1,4 +1,6 @@
 #include <stdio.h>
+//Constantes globais
+const float PI = 3.14;
 //Variáveis globais
 int Op;
 
@@ -61,6 +63,7 @@ void AreaCalc() {
     float TriBase, TriAltura;
     float QuadLado;
     float RetBase, RetAlt;
+    float ConeRaio, ConeGeratriz;
     float ResultArea;
 
     system("clear");
@@ -71,7 +74,8 @@ void AreaCalc() {
     printf("[1] - Triângulo\n");
     printf("\n[2] - Quadrado\n");
     printf("\n[3] - Retângulo\n");
-    printf("\n[4] - Voltar\n");
+    printf("\n[4] - Cone\n");
+    printf("\n[5] - Voltar\n");
 
     printf("\n==========\n");
     printf("Escolha: ");
@@ -210,6 +214,50 @@ void AreaCalc() {
             break;
 
         case 4:
+             Op = 1;
+            while(Op == 1){ //Área do Cone
+                system("clear");
+                printf("=============\n");
+                printf("  AREA CONE\n");
+                printf("=============\n");
+
+                printf("   A Área de um Cone é calculada através da razão\n");
+                printf("entre Pí, o Raio e a soma do Raio com sua Geratriz.\n");
+                printf("   Sendo assim, basta atribuir os valores:\n");
+
+                printf("\nRaio(r): ");
+                scanf("%f", &ConeRaio);
+                printf("\nGeratriz(g): ");
+                scanf("%f", &ConeGeratriz);
+
+                ResultArea = PI*ConeRaio*(ConeRaio+ConeGeratriz);
+
+                printf("\n===========================\n");
+                printf("    Area do Cone: %.2f \n", ResultArea);
+                printf("===========================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    AreaCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                
+                }
+
+            }
+
+            break;
+
+        case 5:
             MenuPrincipal();
 
             break;
@@ -351,11 +399,11 @@ void VolumeCalc() {
                 printf("\nAltura(h): ");
                 scanf("%f", &CiliAlt);
 
-                ResultVolume = 3.14*(CiliRaio*CiliRaio)*CiliAlt;
+                ResultVolume = PI*(CiliRaio*CiliRaio)*CiliAlt;
 
-                printf("\n===========================\n");
+                printf("\n==============================\n");
                 printf("    Volume do Cilindro: %.2f \n", ResultVolume);
-                printf("===========================\n");
+                printf("==============================\n");
 
                 printf("\n\n[1] - Resetar\n");
                 printf("[2] - Voltar\n");
