@@ -64,6 +64,7 @@ void AreaCalc() {
     float QuadLado;
     float RetBase, RetAlt;
     float ConeRaio, ConeGeratriz;
+    float CiliRaio, CiliAlt;
     float ResultArea;
 
     system("clear");
@@ -75,7 +76,8 @@ void AreaCalc() {
     printf("\n[2] - Quadrado\n");
     printf("\n[3] - Retângulo\n");
     printf("\n[4] - Cone\n");
-    printf("\n[5] - Voltar\n");
+    printf("\n[5] - Cilindro\n");
+    printf("\n[6] - Voltar\n");
 
     printf("\n==========\n");
     printf("Escolha: ");
@@ -258,6 +260,50 @@ void AreaCalc() {
             break;
 
         case 5:
+            Op = 1;
+            while(Op == 1){ //Área do Cilindro
+                system("clear");
+                printf("===============\n");
+                printf(" AREA CILINDRO\n");
+                printf("===============\n");
+
+                printf("   A área de um Cilindro é calculada através\n");
+                printf("da razão entre 2PÍ, o Raio e a soma do Raio com.\n");
+                printf("a altura. Sendo assim basta atribuir os valores:\n");
+
+                printf("\nRaio(r): ");
+                scanf("%f", &CiliRaio);
+                printf("\nAltura(h): ");
+                scanf("%f", &CiliAlt);
+
+                ResultArea = 2 * PI * CiliRaio * (CiliRaio + CiliAlt);
+
+                printf("\n===========================\n");
+                printf("  Área do cilindro: %.2f \n", ResultArea);
+                printf("===========================\n");
+
+                printf("\n\n[1] - Resetar\n");
+                printf("[2] - Voltar\n");
+                printf("===============\n");
+                printf(" Escolha: ");
+                scanf("%d", &Op);
+
+                if(Op == 2) {
+                    system("clear");
+                    AreaCalc();
+
+                } else if(Op != 1 && Op != 2) {
+                    printf("\nValor inválido! Tente novamente...\n");
+                    sleep(2);
+                    Op = 1;
+                
+                }
+
+            }
+
+            break;
+
+        case 6:
             MenuPrincipal();
 
             break;
