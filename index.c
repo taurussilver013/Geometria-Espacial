@@ -76,10 +76,10 @@ void AreaCalc() {
     printf("\n[2] - Quadrado\n");
     printf("\n[3] - Retângulo\n");
     printf("\n[4] - Cone\n");
-    printf("\n[5] - Cilindro\n");
-    printf("\n[6] - Voltar\n");
+    printf("\n[5] - Cilindro\n\n");
+    printf("\n\n[6] - Voltar\n");
 
-    printf("\n==========\n");
+    printf("==========\n");
     printf("Escolha: ");
     scanf("%d", &Op);
 
@@ -121,7 +121,7 @@ void AreaCalc() {
                     sleep(2);
                     Op = 1;
                 
-                    break;
+                    
 
                 }
 
@@ -333,10 +333,10 @@ void VolumeCalc() {
 
     printf("[1] - Cubo\n");
     printf("\n[2] - Paralelepípedo\n");
-    printf("\n[3] - Cilindro\n");
-    printf("\n[4] - Voltar\n");
+    printf("\n[3] - Cilindro\n\n");
+    printf("\n\n[4] - Voltar\n");
 
-    printf("\n==========\n");
+    printf("==========\n");
     printf(" Escolha: ");
     scanf("%d", &Op);
 
